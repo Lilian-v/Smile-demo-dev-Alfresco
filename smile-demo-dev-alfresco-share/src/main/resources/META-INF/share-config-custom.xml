@@ -54,5 +54,44 @@
 			</form>
 		</forms>
 	</config>
+    	
+	<!-- Formulaire datalist Client Externe -->
+	<config evaluator="node-type" condition="smile:datalistClientExterne">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="smile:datalistClientExterneNomClient" />
+					<show id="smile:datalistClientExternePrenomClient" />
+					<show id="smile:datalistClientExterneAnneeAdhesion" />
+					<show id="smile:datalistClientExterneSecteurActivite" />
+					<show id="smile:datalistClientExterneEstActif" />
+				</field-visibility>
+				<edit-form template="../data-lists/forms/dataitem.ftl" />
+			</form>
+		</forms>
+	</config>
+	<config evaluator="model-type" condition="smile:datalistClientExterne">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="smile:datalistClientExterneNomClient" />
+					<show id="smile:datalistClientExternePrenomClient" />
+					<show id="smile:datalistClientExterneAnneeAdhesion" />
+					<show id="smile:datalistClientExterneSecteurActivite" />
+					<show id="smile:datalistClientExterneEstActif" />
+				</field-visibility>
+				<create-form template="../data-lists/forms/dataitem.ftl" />
+			</form>
+			<form id="datagrid">
+				<field-visibility>
+					<show id="smile:datalistClientExterneNomClient" />
+					<show id="smile:datalistClientExternePrenomClient" />
+					<show id="smile:datalistClientExterneAnneeAdhesion" />
+					<show id="smile:datalistClientExterneSecteurActivite" />
+					<show id="smile:datalistClientExterneEstActif" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
     
 </alfresco-config>

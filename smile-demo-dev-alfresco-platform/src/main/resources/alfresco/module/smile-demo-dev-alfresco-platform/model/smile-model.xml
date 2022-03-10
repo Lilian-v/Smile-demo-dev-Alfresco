@@ -13,13 +13,79 @@
         <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
         <!-- Import Alfresco System Model Definitions -->
         <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+        <!-- Import Alfresco Datalist model -->
+        <import "http://www.alfresco.org/model/datalist/1.0" prefix="dl"/>
     </imports>
 
     <!-- Custom namespaces -->
     <namespaces>
         <namespace uri="http://www.smile.fr/model/content/1.0" prefix="smile"/>
     </namespaces>
-
+    
+    
+    <!-- Contraintes -->
+    <constraints>
+		<constraint name="smile:datalistClientExterneSecteurActiviteConstraint" type="LIST">
+			<parameter name="allowedValues">
+				<list>
+					<value>Nucléaire</value>
+					<value>Gaz</value>
+					<value>Eolien</value>
+					<value>Administratif</value>
+					<value>Autre</value>
+				</list>
+			</parameter>
+		</constraint>
+	</constraints>
+	
+	
+	<!-- Types -->
+	<types>
+		<type name="smile:datalistClientExterne">
+			<title>Clients externes Smile</title>
+			<description>Métadonnées pour le référentiel client</description>
+			<parent>dl:dataListItem</parent>
+			<properties>
+				<property name="smile:datalistClientExterneNomClient">
+					<title>Nom client</title>
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+					<index enabled="true">
+                        <tokenised>both</tokenised>
+                    </index>
+				</property>
+				<property name="smile:datalistClientExternePrenomClient">
+					<title>Prénom client</title>
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+					<index enabled="true">
+                        <tokenised>both</tokenised>
+                    </index>
+				</property>
+				<property name="smile:datalistClientExterneAnneeAdhesion">
+					<title>Année d'adhésion</title>
+					<type>d:int</type>
+				</property>
+				<property name="smile:datalistClientExterneSecteurActivite">
+					<title>Secteur d'activité</title>
+					<type>d:text</type>
+					<index enabled="true">
+						<tokenised>false</tokenised>
+					</index>
+					<constraints>
+						<constraint ref="smile:datalistClientExterneSecteurActiviteConstraint" />
+					</constraints>
+				</property>
+				<property name="smile:datalistClientExterneEstActif">
+					<title>Actif ?</title>
+					<type>d:boolean</type>
+					<default>true</default>
+				</property>
+			</properties>
+		</type>
+	</types>
+	
+	
     <aspects>
         <aspect name="smile:documentComptable">
             <title>Document comptable</title>
