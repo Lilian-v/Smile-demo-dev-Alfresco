@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- Webscripts définis en Java -->
+	<!-- L'ID du bean DOIT être le chemin vers le fichier .get.desc.xml -->
+	
+	<!-- Hello World java -->
+	<bean id="webscript.fr.smile.java.demo.helloworld.get" class="fr.smile.webscripts.HelloWorldWebScript" parent="webscript" />
+
+</beans>
