@@ -13,14 +13,4 @@
             placed in the alfresco-allinone/share/src/main/resources/alfresco/web-extension/custom-slingshot-application-context.xml file
    -->
 
-   <!-- Add module specific messages and labels -->
-   <bean id="fr.smile.smile-demo-dev-alfresco-share.resources"
-         class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
-      <property name="resourceBundles">
-         <list>
-            <value>alfresco.web-extension.messages.smile-demo-dev-alfresco-share</value>
-         </list>
-      </property>
-   </bean>
-
 </beans>
