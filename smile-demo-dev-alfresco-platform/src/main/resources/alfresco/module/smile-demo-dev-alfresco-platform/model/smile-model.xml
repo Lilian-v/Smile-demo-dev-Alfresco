@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="smile:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <!-- Optional meta-data about the model -->
+    <description>Modèle de données Smile</description>
+    <author>Smile</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco System Model Definitions -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <!-- Custom namespaces -->
+    <namespaces>
+        <namespace uri="http://www.smile.fr/model/content/1.0" prefix="smile"/>
+    </namespaces>
+
+    <aspects>
+        <aspect name="smile:documentComptable">
+            <title>Document comptable</title>
+            <description>Document comptable Smile</description>
+            <properties>
+                <property name="smile:documentComptableID">
+                	<title>ID du document</title>
+                    <type>d:text</type>
+                    <index enabled="true">
+                    	<!-- On ne veut que de la recherche exacte sur un ID, tokenised à false -->
+                        <tokenised>false</tokenised>
+                    </index>
+                </property>
+                
+                <property name="smile:documentComptableDateFacturation">
+                	<title>Date de facturation</title>
+                    <type>d:date</type>
+                </property>
+            </properties>
+        </aspect>
+    </aspects>
+
+</model>
