@@ -106,6 +106,56 @@
                 </property>
             </properties>
         </aspect>
+        
+        <aspect name="smile:approvedDocument">
+            <title>Document approuvé</title>
+            <description>Document approuvé suite à un workflow</description>
+			<properties>
+				<property name="smile:approvedDocumentDateApprobation">
+					<title>Date d'approbation</title>
+					<type>d:date</type>
+				</property>
+			</properties>
+			<associations>
+				<association name="smile:approvedDocumentInitiateur">
+					<title>Initiateur</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>false</many>
+					</source>
+					<target>
+						<class>cm:person</class>
+						<mandatory>false</mandatory>
+						<many>false</many>
+					</target>
+				</association>
+				<association name="smile:approvedDocumentVerificateur">
+					<title>Vérificateur</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>false</many>
+					</source>
+					<target>
+						<class>cm:person</class>
+						<mandatory>false</mandatory>
+						<many>false</many>
+					</target>
+				</association>
+				<association name="smile:approvedDocumentApprobateur">
+					<title>Approbateur</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>false</many>
+					</source>
+					<target>
+						<class>cm:person</class>
+						<mandatory>false</mandatory>
+						<many>false</many>
+					</target>
+				</association>
+			</associations>
+		</aspect>
+        
     </aspects>
 
 </model>

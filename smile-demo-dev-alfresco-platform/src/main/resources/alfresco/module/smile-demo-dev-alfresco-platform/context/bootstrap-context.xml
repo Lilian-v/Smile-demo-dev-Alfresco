@@ -21,5 +21,26 @@
             </list>
         </property>
     </bean>
+    
+    <bean id="smile.workflowBootstrap" parent="workflowDeployer">
+		<property name="workflowDefinitions">
+			<list>
+				<props>
+					<prop key="engineId">activiti</prop>
+					<prop key="location">alfresco/module/${project.artifactId}/workflow/smile-check-approve-workflow.bpmn20.xml</prop>
+					<prop key="mimetype">text/xml</prop>
+					<!-- mettre à true si on modifie le schéma du workflow -->
+					<prop key="redeploy">false</prop>
+				</props>
+			</list>
+		</property>
+		<property name="models">
+			<list>
+				<value>alfresco/module/${project.artifactId}/model/smile-workflow-model.xml</value>
+			</list>
+		</property>
+	</bean>
+
+    
 
 </beans>

@@ -54,6 +54,31 @@
 			</form>
 		</forms>
 	</config>
+	
+	<!-- Aspect smile:approvedDocument -->
+	<config evaluator="aspect" condition="smile:approvedDocument">
+		<forms>
+			<form>
+				<field-visibility>
+					<!-- Champs visibles si l'aspect est présent, dans l'ordre où l'on souhaite les afficher -->
+					<show id="smile:approvedDocumentDateApprobation" />
+					<show id="smile:approvedDocumentInitiateur" />
+					<show id="smile:approvedDocumentVerificateur" />
+					<show id="smile:approvedDocumentApprobateur" />
+				</field-visibility>
+				<!-- Optionnel, paramètres d'affichage supplémentaires -->
+				<appearance>
+					<!-- On regroupe les champs dans un panel pour un affichage plus joli -->
+					<set id="smileApprovedDocumentSet" appearance="panel" label="Workflow" />
+					<field id="smile:approvedDocumentDateApprobation" set="smileApprovedDocumentSet" />
+					<field id="smile:approvedDocumentInitiateur" set="smileApprovedDocumentSet" />
+					<field id="smile:approvedDocumentVerificateur" set="smileApprovedDocumentSet" />
+					<field id="smile:approvedDocumentApprobateur" set="smileApprovedDocumentSet" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
+	
     	
 	<!-- Formulaire datalist Client Externe -->
 	<config evaluator="node-type" condition="smile:datalistClientExterne">
@@ -116,6 +141,131 @@
 					<!-- On veut choisir une plage de date, et non une date exacte -->
 					<field id="smile:documentComptableDateFacturation">
 						<control template="/org/alfresco/components/form/controls/daterange.ftl" />
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+    
+    
+	<!-- 
+		Formulaires de workflows 
+	-->
+	<!-- Formulaire de création du workflow -->
+	<config evaluator="string-compare" condition="activiti$edfCheckApproveProcess">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="bpm:workflowDescription" />
+					<show id="bpm:workflowDueDate" />
+					<show id="bpm:workflowPriority" />
+					<show id="edfwf:checkApproveWorkflowVerificateur" />
+					<show id="edfwf:checkApproveWorkflowApprobateur" />
+					<show id="packageItems" />
+				</field-visibility>
+				<appearance>
+					<field id="bpm:workflowDescription" mandatory="true">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="style">width: 95%</control-param>
+						</control>
+						<constraint-handlers>
+							<constraint type="MANDATORY"
+								validation-handler="Alfresco.forms.validation.mandatory"
+								event="keyup,propertychange" />
+						</constraint-handlers>
+					</field>
+					<field id="bpm:workflowPriority">
+						<control template="/org/alfresco/components/form/controls/workflow/priority.ftl" />
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+	<!-- Formulaire de consultation de la tâche de création -->
+	<config evaluator="task-type" condition="edfwf:checkApproveWorkflowSubmitTask">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="bpm:workflowDescription" />
+					<show id="bpm:workflowDueDate" />
+					<show id="bpm:workflowPriority" />
+					<show id="edfwf:checkApproveWorkflowVerificateur" />
+					<show id="edfwf:checkApproveWorkflowApprobateur" />
+					<show id="packageItems" />
+				</field-visibility>
+				<appearance>
+					<field id="bpm:workflowDescription" mandatory="true">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="style">width: 95%</control-param>
+						</control>
+						<constraint-handlers>
+							<constraint type="MANDATORY"
+								validation-handler="Alfresco.forms.validation.mandatory"
+								event="keyup,propertychange" />
+						</constraint-handlers>
+					</field>
+					<field id="bpm:workflowPriority">
+						<control template="/org/alfresco/components/form/controls/workflow/priority.ftl" />
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+	
+	<!-- Tâche de vérification -->
+	<config evaluator="task-type" condition="edfwf:checkApproveWorkflowVerificationTask">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="message" />
+					<show id="packageItems" />
+					<show id="bpm:comment" />
+					<show id="edfwf:checkApproveWorkflowVerificationTaskOutcome" />
+				</field-visibility>
+				<appearance>
+					<field id="message">
+						<control template="/org/alfresco/components/form/controls/info.ftl" />
+					</field>
+					<field id="bpm:comment">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl" />
+						<constraint-handlers>
+							<constraint type="MANDATORY"
+								validation-handler="Alfresco.forms.validation.mandatory"
+								event="keyup,propertychange" />
+						</constraint-handlers>
+					</field>
+					<field id="edfwf:checkApproveWorkflowVerificationTaskOutcome">
+						<control template="/org/alfresco/components/form/controls/workflow/activiti-transitions.ftl" />
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+	
+	<!-- Tâche d'approbation -->
+	<config evaluator="task-type" condition="edfwf:checkApproveWorkflowApprobationTask">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="message" />
+					<show id="packageItems" />
+					<show id="bpm:comment" />
+					<show id="edfwf:checkApproveWorkflowApprobationTaskOutcome" />
+				</field-visibility>
+				<appearance>
+					<field id="message">
+						<control template="/org/alfresco/components/form/controls/info.ftl" />
+					</field>
+					<field id="bpm:comment">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl" />
+						<constraint-handlers>
+							<constraint type="MANDATORY"
+								validation-handler="Alfresco.forms.validation.mandatory"
+								event="keyup,propertychange" />
+						</constraint-handlers>
+					</field>
+					<field id="edfwf:checkApproveWorkflowApprobationTaskOutcome">
+						<control template="/org/alfresco/components/form/controls/workflow/activiti-transitions.ftl" />
 					</field>
 				</appearance>
 			</form>
