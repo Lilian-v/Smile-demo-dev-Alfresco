@@ -1,0 +1,5 @@
+<search>
+   <!-- Paramétrage pour les suggestions lors de la recherche rapide -->
+   <default-operator>AND</default-operator>
+   <default-query-template>%(cm:name cm:title cm:description TEXT TAG smile:documentComptableID)</default-query-template>
+</search>
