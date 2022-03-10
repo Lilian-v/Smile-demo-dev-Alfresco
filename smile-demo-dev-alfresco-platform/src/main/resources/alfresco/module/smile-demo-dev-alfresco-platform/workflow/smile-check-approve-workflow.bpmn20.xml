@@ -49,17 +49,17 @@
 	document.properties["smile:approvedDocumentDateApprobation"] = utils.toISO8601(new Date());
 	
 	// On  supprime les associations existantes avant de les recréer
-	var existingAssocs = document.getAssociations()["{http://www.edf.fr/model/content/1.0}approvedDocumentInitiateur"];
+	var existingAssocs = document.getAssociations()["{http://www.smile.fr/model/content/1.0}approvedDocumentInitiateur"];
 	if (existingAssocs != null && existingAssocs.length > 0) {
-		document.removeAssociation(existingAssocs[0], "{http://www.edf.fr/model/content/1.0}approvedDocumentInitiateur");
+		document.removeAssociation(existingAssocs[0], "{http://www.smile.fr/model/content/1.0}approvedDocumentInitiateur");
 	}
-	existingAssocs = document.getAssociations()["{http://www.edf.fr/model/content/1.0}approvedDocumentVerificateur"];
+	existingAssocs = document.getAssociations()["{http://www.smile.fr/model/content/1.0}approvedDocumentVerificateur"];
 	if (existingAssocs != null && existingAssocs.length > 0) {
-		document.removeAssociation(existingAssocs[0], "{http://www.edf.fr/model/content/1.0}approvedDocumentVerificateur");
+		document.removeAssociation(existingAssocs[0], "{http://www.smile.fr/model/content/1.0}approvedDocumentVerificateur");
 	}
-	existingAssocs = document.getAssociations()["{http://www.edf.fr/model/content/1.0}approvedDocumentApprobateur"];
+	existingAssocs = document.getAssociations()["{http://www.smile.fr/model/content/1.0}approvedDocumentApprobateur"];
 	if (existingAssocs != null && existingAssocs.length > 0) {
-		document.removeAssociation(existingAssocs[0], "{http://www.edf.fr/model/content/1.0}approvedDocumentApprobateur");
+		document.removeAssociation(existingAssocs[0], "{http://www.smile.fr/model/content/1.0}approvedDocumentApprobateur");
 	}
 
 	// On peut créer les nouvelles associations
