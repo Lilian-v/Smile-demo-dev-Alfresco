@@ -12,5 +12,14 @@
            (i.e. not specific to this share extension) should be
             placed in the alfresco-allinone/share/src/main/resources/alfresco/web-extension/custom-slingshot-application-context.xml file
    -->
+   
+   <!-- Add module specific messages and labels -->
+   <bean id="fr.smile.share-label" class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
+      <property name="resourceBundles">
+         <list>
+            <value>alfresco.web-extension.messages.smile-share-label</value>
+         </list>
+      </property>
+   </bean>
 
 </beans>

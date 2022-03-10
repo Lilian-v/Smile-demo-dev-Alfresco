@@ -10,5 +10,49 @@
              alfresco/tomcat/shared/classes/alfresco/web-extension/share-config-custom.xml
      -->
 <alfresco-config>
+    <!-- 
+		Configuration Share 
+	-->
+	
+	<config evaluator="string-compare" condition="DocumentLibrary">
+		<aspects>
+			<!-- Permet de définir les aspects que l'on peut ajouter / retirer depuis 
+				l'interface Share -->
+			<visible>
+				<aspect name="smile:documentComptable" />
+			</visible>
+			<addable> <!-- defaults to visible config -->
+			</addable>
+			<removeable> <!-- defaults to visible config -->
+			</removeable>
+		</aspects>
+		<types>
+			<!-- Permet de définir les transitions de type possible depuis l'interface Share -->
+		</types>
+	</config>
+
+	<!-- 
+		Formulaires 
+	-->
+
+	<!-- Aspect smile:documentComptable -->
+	<config evaluator="aspect" condition="smile:documentComptable">
+		<forms>
+			<form>
+				<field-visibility>
+					<!-- Champs visibles si l'aspect est présent, dans l'ordre où l'on souhaite les afficher -->
+					<show id="smile:documentComptableID" />
+					<show id="smile:documentComptableDateFacturation" />
+				</field-visibility>
+				<!-- Optionnel, paramètres d'affichage supplémentaires -->
+				<appearance>
+					<!-- On regroupe les champs dans un panel pour un affichage plus joli -->
+					<set id="smileDocumentComptableSet" appearance="panel" label-id="form.set.smile_documentComptable" />
+					<field id="smile:documentComptableID" set="smileDocumentComptableSet" />
+					<field id="smile:documentComptableDateFacturation" set="smileDocumentComptableSet" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
     
 </alfresco-config>
