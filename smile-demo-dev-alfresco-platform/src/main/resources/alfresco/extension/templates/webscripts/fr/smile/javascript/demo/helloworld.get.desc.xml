@@ -1,9 +1,9 @@
 <webscript>
     <shortname>Hello World Javascript</shortname>
     <description>Hands back a greeting</description>
-    <url>/edf/demo/helloworldJavascript</url>
+    <url>/smile/demo/helloworldJavascript</url>
     <authentication>user</authentication>
     <format default="html" />
-    <family>EDF</family>
+    <family>Smile</family>
     <transaction allow="readwrite">required</transaction>
 </webscript>

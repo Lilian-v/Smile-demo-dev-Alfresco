@@ -14,7 +14,7 @@
         <!-- Import Alfresco System Model Definitions -->
         <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
         <!-- Import Alfresco Datalist model -->
-        <import "http://www.alfresco.org/model/datalist/1.0" prefix="dl"/>
+        <import uri="http://www.alfresco.org/model/datalist/1.0" prefix="dl"/>
     </imports>
 
     <!-- Custom namespaces -->
@@ -154,6 +154,11 @@
 					</target>
 				</association>
 			</associations>
+		</aspect>
+        
+        <aspect name="smile:documentArchive">
+			<title>Document archivé</title>
+			<description>Document archivé</description>
 		</aspect>
         
     </aspects>
