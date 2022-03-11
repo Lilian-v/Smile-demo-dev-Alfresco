@@ -9,5 +9,7 @@
 	
 	<!-- Hello World java -->
 	<bean id="webscript.fr.smile.java.demo.helloworld.get" class="fr.smile.webscripts.HelloWorldWebScript" parent="webscript" />
-
+	
+	<bean id="webscript.fr.smile.java.createupdatesmiledocument.post" class="fr.smile.webscripts.CreateOrUpdateSmileDocument" parent="webscript" />
+	
 </beans>

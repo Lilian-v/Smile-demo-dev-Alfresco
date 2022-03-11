@@ -1,0 +1,9 @@
+<webscript>
+    <shortname>Création / update document Smile</shortname>
+    <description>Ajout ou mise à jour de document, avec contenu et métadonnées</description>
+    <url>/smile/documentComptable/createOrUpdate</url>
+    <authentication>user</authentication>
+    <format default="html" />
+    <family>Smile</family>
+    <transaction allow="readwrite">required</transaction>
+</webscript>
