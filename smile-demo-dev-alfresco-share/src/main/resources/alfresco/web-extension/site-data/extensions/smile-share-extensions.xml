@@ -1,0 +1,21 @@
+<extension>
+	<modules>
+		<module>
+			<id>Smile extensions</id>
+			<auto-deploy>true</auto-deploy>
+
+			<customizations>
+				<customization>
+					<!-- Permet d'étendre des composants Share présents nativement dans web-extension/site-webscripts/sourcePackageRoot
+						avec les fichiers customs présents dans web-extension/site-webscripts/targetPackageRoot -->
+					<sourcePackageRoot>fr.smile.customizations</sourcePackageRoot>
+					<targetPackageRoot>org.alfresco</targetPackageRoot>
+				</customization>
+			</customizations>
+
+			<configurations>
+				<!-- Ici on peut mettre la même configuration que dans le share-config-custom -->
+			</configurations>
+		</module>
+	</modules>
+</extension>
