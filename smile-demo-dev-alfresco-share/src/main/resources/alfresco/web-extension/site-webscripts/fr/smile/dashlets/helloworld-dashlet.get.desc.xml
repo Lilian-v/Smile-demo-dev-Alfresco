@@ -1,0 +1,6 @@
+<webscript>
+	<shortname>Hello World Dashlet</shortname>
+	<description>Hello World Dashlet with click button</description>
+	<family>dashlet</family>
+	<url>/smile/components/dashlets/helloworld</url>
+</webscript>
