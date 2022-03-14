@@ -1,0 +1,6 @@
+<webscript>
+	<shortname>accueil-component</shortname>
+	<description>Renvoie la région Accueil de la page SmileHome</description>
+	<!-- Doit être identique au chemin du composant -->
+	<url>/fr/smile/pages/smilehome/accueil-component</url>
+</webscript>

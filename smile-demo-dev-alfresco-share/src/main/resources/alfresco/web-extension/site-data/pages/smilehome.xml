@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+	<title>Accueil Smile</title>
+	<description>Page d'accueil Smile</description>
+	<!-- Référence à un template dans web-extension/site-data/template-instances -->
+	<template-instance>smilehome-template</template-instance>
+	<authentication>user</authentication>
+</page>

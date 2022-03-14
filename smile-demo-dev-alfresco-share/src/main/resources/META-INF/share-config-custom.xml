@@ -30,6 +30,15 @@
 			<!-- Permet de définir les transitions de type possible depuis l'interface Share -->
 		</types>
 	</config>
+	
+	<!-- Nouvelles pages ajoutables sur un site -->
+	<config evaluator="string-compare" condition="SitePages">
+		<pages>
+			<!-- L'intérieur de la balise doit être le nom de la page dans web-extension/site-data/pages -->
+			<page id="smilehome">smilehome</page>
+		</pages>
+	</config>
+	
 
 	<!-- 
 		Formulaires 

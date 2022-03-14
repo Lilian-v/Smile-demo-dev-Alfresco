@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<!-- Chemin vers un composant coté client présent dans web-extension/site-webscripts -->
+	<url>/fr/smile/pages/smilehome/accueil-component</url>
+</component>

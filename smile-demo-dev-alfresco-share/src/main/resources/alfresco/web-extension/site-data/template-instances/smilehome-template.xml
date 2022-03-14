@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<template-instance>
+	<!-- Référence vers le template ftl dans web-extension/templates -->
+	<template-type>smile/pages/smile-page-template</template-type>
+</template-instance>
