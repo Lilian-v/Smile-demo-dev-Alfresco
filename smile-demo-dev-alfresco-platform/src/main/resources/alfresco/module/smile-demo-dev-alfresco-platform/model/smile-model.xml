@@ -121,7 +121,7 @@
 					<title>Initiateur</title>
 					<source>
 						<mandatory>false</mandatory>
-						<many>false</many>
+						<many>true</many>
 					</source>
 					<target>
 						<class>cm:person</class>
@@ -133,7 +133,7 @@
 					<title>Vérificateur</title>
 					<source>
 						<mandatory>false</mandatory>
-						<many>false</many>
+						<many>true</many>
 					</source>
 					<target>
 						<class>cm:person</class>
@@ -145,7 +145,7 @@
 					<title>Approbateur</title>
 					<source>
 						<mandatory>false</mandatory>
-						<many>false</many>
+						<many>true</many>
 					</source>
 					<target>
 						<class>cm:person</class>

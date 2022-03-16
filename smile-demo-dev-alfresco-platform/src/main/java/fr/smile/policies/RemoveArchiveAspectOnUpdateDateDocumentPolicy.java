@@ -29,6 +29,7 @@ public class RemoveArchiveAspectOnUpdateDateDocumentPolicy implements OnUpdatePr
 	public void afterPropertiesSet() throws Exception {
 		this.policyComponent.bindClassBehaviour(OnUpdatePropertiesPolicy.QNAME,
 				SmileModel.ASPECT_DOCUMENT_ARCHIVE, // Aspect / type que le node doit avoir pour que la policy se déclenche
+				// ContentModel.TYPE_CMOBJECT pour dossiers + fichiers
 				new JavaBehaviour(this, "onUpdateProperties", Behaviour.NotificationFrequency.TRANSACTION_COMMIT));
 	}
 
