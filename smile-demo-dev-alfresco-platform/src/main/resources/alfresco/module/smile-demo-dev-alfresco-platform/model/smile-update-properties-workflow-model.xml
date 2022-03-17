@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="smilewfUpProp:workflowModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <!-- Optional meta-data about the model -->
+    <description>Modèle de workflow Update properties Smile</description>
+    <author>Smile</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco Workflow Model Definitions -->
+        <import uri="http://www.alfresco.org/model/bpm/1.0" prefix="bpm"/>
+    </imports>
+
+    <!-- Custom namespaces -->
+    <namespaces>
+        <namespace uri="http://www.smile.fr/model/workflow-update-properties/1.0" prefix="smilewfUpProp"/>
+    </namespaces>
+    
+    <types>
+    	<!-- Tâche de début de workflow -->
+		<type name="smilewfUpProp:updatePropertiesWorkflowSubmitTask">
+			<parent>bpm:startTask</parent>
+		</type>
+	</types>
+
+</model>
