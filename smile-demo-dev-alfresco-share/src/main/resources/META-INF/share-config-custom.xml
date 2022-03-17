@@ -38,6 +38,27 @@
 			<page id="smilehome">smilehome</page>
 		</pages>
 	</config>
+
+	<config evaluator="string-compare" condition="DocLibActions">
+		<actions>
+			<action id="smileAction-setDateFacturation"
+					type="javascript"
+					label="Définir date facturation">
+				<param name="function">onActionSimpleRepoAction</param>
+				<param name="action">smile.action.setDateFacturation</param> <!-- Repository action id = Spring Bean id -->
+				<param name="successMessage">Youpi !</param>
+				<param name="failureMessage">Mince....</param>
+			</action>
+		</actions>
+		<actionGroups>
+			<actionGroup id="document-browse">
+				<action index="400" id="smileAction-setDateFacturation" />
+			</actionGroup>
+			<actionGroup id="document-details">
+				<action index="400" id="smileAction-setDateFacturation" />
+			</actionGroup>
+		</actionGroups>
+	</config>
 	
 
 	<!-- 
