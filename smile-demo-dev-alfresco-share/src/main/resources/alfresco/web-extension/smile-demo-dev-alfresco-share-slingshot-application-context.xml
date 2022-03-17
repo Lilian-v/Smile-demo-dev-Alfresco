@@ -22,4 +22,12 @@
       </property>
    </bean>
 
+	<bean id="smile.evaluator.hasAspectDocumentComptable" parent="evaluator.doclib.action.hasAspect">
+		<property name="aspects">
+			<list>
+				<value>smile:documentComptable</value>
+			</list>
+		</property>
+	</bean>
+
 </beans>

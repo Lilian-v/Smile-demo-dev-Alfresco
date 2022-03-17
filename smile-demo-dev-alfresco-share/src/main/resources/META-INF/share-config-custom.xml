@@ -48,6 +48,7 @@
 				<param name="action">smile.action.setDateFacturation</param> <!-- Repository action id = Spring Bean id -->
 				<param name="successMessage">Youpi !</param>
 				<param name="failureMessage">Mince....</param>
+				<evaluator>smile.evaluator.hasAspectDocumentComptable</evaluator>
 			</action>
 		</actions>
 		<actionGroups>
