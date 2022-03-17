@@ -281,4 +281,16 @@
 		</forms>
 	</config>
     
+    <!-- Formulaires workflow update properties -->
+	<!-- Formulaire de consultation de la tâche de création -->
+	<config evaluator="string-compare" condition="activiti$smileUpdatePropertiesProcess">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="smilewfUpProp:updatePropertiesWorkflowNewTitlePropertie" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+    
 </alfresco-config>

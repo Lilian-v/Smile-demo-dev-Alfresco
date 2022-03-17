@@ -24,6 +24,12 @@
     	<!-- Tâche de début de workflow -->
 		<type name="smilewfUpProp:updatePropertiesWorkflowSubmitTask">
 			<parent>bpm:startTask</parent>
+			<properties>
+				<property name="smilewfUpProp:updatePropertiesWorkflowNewTitlePropertie">
+					<title>Nouveau titre</title>
+					<type>d:text</type>
+				</property>
+			</properties>
 		</type>
 	</types>
 
