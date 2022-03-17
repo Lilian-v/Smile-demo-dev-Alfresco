@@ -288,6 +288,9 @@
 			<form>
 				<field-visibility>
 					<show id="smilewfUpProp:updatePropertiesWorkflowNewTitlePropertie" />
+					<!-- On affiche le packageitems sinon le document n'est pas rattaché au workflow -->
+					<show id="packageItems" />
+					<show id="bpm:workflowDueDate" />
 				</field-visibility>
 			</form>
 		</forms>

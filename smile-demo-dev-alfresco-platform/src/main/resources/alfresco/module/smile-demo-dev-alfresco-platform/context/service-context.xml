@@ -20,4 +20,6 @@
 		</property>
 	</bean>
 	
+	<bean id="smile.workflowService" class="fr.smile.workflows.SmileWorkflowService" />
+	
 </beans>

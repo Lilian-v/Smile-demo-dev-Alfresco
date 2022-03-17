@@ -8,5 +8,8 @@
 	<!-- Code Java exécuté dans le workflow -->
 	<bean id="smile.workflow.checkApprove.ApprobationSuccessDelegateExpression.bean" parent="baseJavaDelegate" 
 		class="fr.smile.workflows.ApprobationSuccessDelegateExpression" />
+	
+	<bean id="smile.workflow.updateProperties.UpdateNodePropertiesDelegateExpression.bean" parent="baseJavaDelegate"
+		class="fr.smile.workflows.updateProperties.UpdateNodePropertiesDelegateExpression" />
 
 </beans>
