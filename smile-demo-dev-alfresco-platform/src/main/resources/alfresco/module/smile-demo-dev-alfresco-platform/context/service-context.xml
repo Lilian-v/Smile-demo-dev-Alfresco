@@ -22,4 +22,6 @@
 	
 	<bean id="smile.workflowService" class="fr.smile.workflows.SmileWorkflowService" />
 	
+	<bean id="smile.smileUtils" class="fr.smile.services.SmileUtils" />
+	
 </beans>

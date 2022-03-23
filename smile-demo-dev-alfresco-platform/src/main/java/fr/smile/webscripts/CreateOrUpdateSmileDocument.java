@@ -26,6 +26,7 @@ import org.springframework.extensions.webscripts.WebScriptRequest;
 import org.springframework.extensions.webscripts.WebScriptResponse;
 
 import fr.smile.model.SmileModel;
+import fr.smile.services.SmileUtils;
 
 public class CreateOrUpdateSmileDocument extends AbstractWebScript {
 	private static final Logger logger = Logger.getLogger(CreateOrUpdateSmileDocument.class);
@@ -41,6 +42,8 @@ public class CreateOrUpdateSmileDocument extends AbstractWebScript {
 	private ContentService contentService;
 	@Autowired
 	private SiteService siteService;
+	@Autowired
+	private SmileUtils smileUtils;
 	
 	@Override
 	public void execute(WebScriptRequest req, WebScriptResponse res) throws IOException {
@@ -80,8 +83,9 @@ public class CreateOrUpdateSmileDocument extends AbstractWebScript {
 			NodeRef documentLibraryNodeRef = siteService.getContainer(siteDepot.getShortName(), SiteService.DOCUMENT_LIBRARY);
 			
 			// Création d'un nouveau document
-			// TODO si passage en prod :  vérifier que le nom est un nom valide, et qu'il n'existe pas déjà dans le dossier
-			nodeToUpdate = fileFolderService.create(documentLibraryNodeRef, nomDocumentParam, ContentModel.TYPE_CONTENT).getNodeRef();
+			// Vérifier que le nom est un nom valide, et qu'il n'existe pas déjà dans le dossier
+			String validUniqueName = smileUtils.getUniqueValidName(documentLibraryNodeRef, nomDocumentParam);
+			nodeToUpdate = fileFolderService.create(documentLibraryNodeRef, validUniqueName, ContentModel.TYPE_CONTENT).getNodeRef();
 		}
 		
 		// Mise à jour des métadonnées du document
