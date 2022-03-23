@@ -9,6 +9,7 @@
             <activiti:string><![CDATA[execution.setVariable("smile_verificationResult", task.getVariableLocal('smilewf_checkApproveWorkflowVerificationTaskOutcome'));]]></activiti:string>
           </activiti:field>
         </activiti:taskListener>
+        <activiti:taskListener event="create" delegateExpression="${Smile_CheckApprove_Customs.SendMailTaskCreation}"></activiti:taskListener>
       </extensionElements>
     </userTask>
     <userTask id="usertaskApprobation" name="Approbation" activiti:assignee="${smilewf_checkApproveWorkflowApprobateur.properties.userName}" activiti:formKey="smilewf:checkApproveWorkflowApprobationTask">
@@ -18,6 +19,7 @@
             <activiti:string><![CDATA[execution.setVariable("smile_approbationResult", task.getVariableLocal('smilewf_checkApproveWorkflowApprobationTaskOutcome'));]]></activiti:string>
           </activiti:field>
         </activiti:taskListener>
+        <activiti:taskListener event="create" delegateExpression="${Smile_CheckApprove_Customs.SendMailTaskCreation}"></activiti:taskListener>
       </extensionElements>
     </userTask>
     <endEvent id="endevent1" name="End"></endEvent>

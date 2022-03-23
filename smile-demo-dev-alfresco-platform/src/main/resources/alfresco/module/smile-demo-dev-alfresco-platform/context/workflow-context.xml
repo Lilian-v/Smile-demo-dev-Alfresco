@@ -5,11 +5,30 @@
           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
 	
-	<!-- Code Java exécuté dans le workflow -->
+	<!-- baseJavaDelegate = utilisable dans une service task -->
 	<bean id="smile.workflow.checkApprove.ApprobationSuccessDelegateExpression.bean" parent="baseJavaDelegate" 
-		class="fr.smile.workflows.ApprobationSuccessDelegateExpression" />
+			class="fr.smile.workflows.ApprobationSuccessDelegateExpression" />
 	
-	<bean id="smile.workflow.updateProperties.UpdateNodePropertiesDelegateExpression.bean" parent="baseJavaDelegate"
-		class="fr.smile.workflows.updateProperties.UpdateNodePropertiesDelegateExpression" />
-
+	<!-- Exemple de beans dans le code Alfresco : https://github.com/Alfresco/alfresco-repository/blob/master/src/main/resources/alfresco/activiti-context.xml#L220 -->
+	<bean id="smile.workflow.checkApprove.SendMailTaskCreationTaskListener.bean" class="fr.smile.workflows.SendMailTaskCreationTaskListener" 
+			depends-on="activitiWorkflowManager" />
+	
+	
+	<!-- Beans utilisables dans les listeners de tâches -->
+	<bean id="smile.workflow.checkApprove.customJavaListeners" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" 
+			depends-on="activitiBeanRegistry">
+		<property name="targetObject" ref="activitiBeanRegistry" />
+		<property name="targetMethod" value="put" />
+		<property name="arguments">
+			<list>
+				<value>Smile_CheckApprove_Customs</value>
+				<!-- Variables et beans qui seront accessibles dans le processus du workflow -->
+				<map>
+					<entry key="SendMailTaskCreation">
+						<ref bean="smile.workflow.checkApprove.SendMailTaskCreationTaskListener.bean" />
+					</entry>
+				</map>
+			</list>
+		</property>
+	</bean>
 </beans>
